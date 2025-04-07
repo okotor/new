@@ -1,12 +1,17 @@
-package com.example.database;
+package com.example.demo.database;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class PostgreSQLExample {
-    public static void main(String[] args) {
+@Component
+public class PostgreSQLExample implements CommandLineRunner {
+    @Override
+    public void run(String... args) throws Exception {
         // PostgreSQL connection URL and credentials
         String url = "jdbc:postgresql://yamabiko.proxy.rlwy.net:46958/railway";
         String user = "postgres";
